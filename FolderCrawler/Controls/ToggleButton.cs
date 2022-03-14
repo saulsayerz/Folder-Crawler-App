@@ -20,14 +20,15 @@ namespace FolderCrawler.Controls
         private bool solidStyle = true;
 
         public Color OnBackColor { get => onBackColor; set { onBackColor = value; this.Invalidate(); } }
-        public Color OnToggleColor { get => onToggleColor; set { onToggleColor = value; this.Invalidate()} }
+        public Color OnToggleColor { get => onToggleColor; set { onToggleColor = value; this.Invalidate(); } }
         public Color OffBackColor { get => offBackColor; set { offBackColor = value; this.Invalidate(); } }
         public Color OffToggleColor { get => offToggleColor; set { offToggleColor = value; this.Invalidate(); } }
-        public bool SolidStyle { get => solidStyle; set {solidStyle = value; this.Invalidate(); }
+        public bool SolidStyle { get => solidStyle; set { solidStyle = value; this.Invalidate(); } }
 
         public ToggleButton()
         {
             this.MinimumSize = new Size(45, 22);
+            this.AutoSize = false;
         }
         private GraphicsPath GetFigurePath()
         {
