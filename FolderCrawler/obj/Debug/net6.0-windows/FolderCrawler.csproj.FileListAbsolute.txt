@@ -1,0 +1,17 @@
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.csproj.AssemblyReference.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.Form1.resources
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.csproj.GenerateResource.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.AssemblyInfoInputs.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.AssemblyInfo.cs
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.csproj.CoreCompileInputs.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\FolderCrawler.exe
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\FolderCrawler.deps.json
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\FolderCrawler.runtimeconfig.json
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\FolderCrawler.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\FolderCrawler.pdb
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\refint\FolderCrawler.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.pdb
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.genruntimeconfig.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\ref\FolderCrawler.dll

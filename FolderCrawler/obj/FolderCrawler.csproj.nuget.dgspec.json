@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj": {}
+    "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\FolderCrawler.csproj": {}
   },
   "projects": {
-    "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj": {
+    "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\FolderCrawler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj",
-        "projectName": "src",
-        "projectPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj",
+        "projectUniqueName": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\FolderCrawler.csproj",
+        "projectName": "FolderCrawler",
+        "projectPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\FolderCrawler.csproj",
         "packagesPath": "C:\\Users\\kylet\\.nuget\\packages\\",
-        "outputPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\obj\\",
+        "outputPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kylet\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -52,6 +52,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
