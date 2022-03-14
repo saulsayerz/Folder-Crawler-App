@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Finder
+namespace FolderCrawler
 {
 
     /// <summary>
@@ -20,7 +20,10 @@ namespace Finder
         // Attributes: 
         private string curDir = default!; //tbh gatau knp harus = default!, tapi di komputerku kalau gk ada itu error
         private string endFile = default! ;
+        private string foundDir = default!;
         private Boolean found = false; //kondisi awal --> file belum ditemukan
+
+        public string FoundDir { get => foundDir; set => foundDir = value; }
 
         // Getter 
         public string getCurDir()
@@ -78,7 +81,7 @@ namespace Finder
                 if (namafile == this.endFile) 
                 {
                     this.found = true;
-                    Console.WriteLine(item);
+                    this.foundDir = item;
                     break;
                 }
             }
