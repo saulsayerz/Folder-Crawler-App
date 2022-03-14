@@ -23,8 +23,6 @@ namespace FolderCrawler
         private string foundDir = default!;
         private Boolean found = false; //kondisi awal --> file belum ditemukan
 
-        public string FoundDir { get => foundDir; set => foundDir = value; }
-
         // Getter 
         public string getCurDir()
         {
@@ -34,6 +32,11 @@ namespace FolderCrawler
         public string getEndFile()
         {
             return endFile;
+        }
+
+        public string getFoundDir()
+        {
+            return foundDir;
         }
 
         // Setter 
@@ -46,6 +49,13 @@ namespace FolderCrawler
         {
             this.endFile = newEndFile; 
         }
+
+        public void setFoundDir(string newFoundDir)
+        {
+            this.foundDir = newFoundDir;
+        }
+
+
 
         // To get input for the attributes
         public void inputSearch() 
@@ -92,6 +102,7 @@ namespace FolderCrawler
 
             // Check the current path first. Does it have the file we are searching for?
             this.checkFiles();
+            this.found = false;
 
             // If file is not present in the current path, we continue to traverse for each subdirectory.
             if (!this.found)
@@ -114,7 +125,7 @@ namespace FolderCrawler
         public Boolean BFS(){
             //Check the start directory, does it have the file we're searching for?
             this.checkFiles();
-            
+            this.found = false;
             //In case the file is not found, iterate for every subdirectory using BFS traverse
             string[] listOfSubDir = Directory.GetDirectories(this.curDir);
             string tempStartDir = this.curDir;

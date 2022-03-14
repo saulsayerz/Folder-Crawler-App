@@ -4,6 +4,7 @@ namespace FolderCrawler
     {
         Boolean validFolder;
         Boolean selectedMethod;
+        string startDir;
         folder startFolder;
         public Form1()
         {
@@ -20,7 +21,7 @@ namespace FolderCrawler
             {
                 label2.Text = fd.SelectedPath;
                 validFolder = true;
-                startFolder.setCurDir(fd.SelectedPath);
+                startDir = fd.SelectedPath;
             }
             else
             {
@@ -36,12 +37,14 @@ namespace FolderCrawler
                 label3.ForeColor = Color.Black;
                 if (!String.IsNullOrEmpty(textBox1.Text))
                 {
+                    startFolder.setCurDir(startDir);
                     startFolder.setEndFile(textBox1.Text);
                     if (optionButton1.Checked)
                     {
+                        
                         if (startFolder.BFS())
                         {
-                            label3.Text = startFolder.FoundDir;
+                            label3.Text = startFolder.getFoundDir();
                         }
                         else
                         {
@@ -52,8 +55,9 @@ namespace FolderCrawler
                     {
                         if (startFolder.DFS())
                         {
-                            label3.Text = startFolder.FoundDir;
+                            label3.Text = startFolder.getFoundDir();
                         }
+               
                         else
                         {
                             label3.Text = "File Not Found";
@@ -61,23 +65,18 @@ namespace FolderCrawler
                     }
 
                 }
-                else if (!validFolder) 
-                {
-                    label3.ForeColor = Color.Red;
-                    label3.Text = "Folder Invalid!";
-                }
-                else
-                {
-                    label3.ForeColor = Color.Red;
-                    label3.Text = "Search Mode Must be Selected!";
-                }
                 
             }
 
+            else if (!validFolder)
+            {
+                label3.ForeColor = Color.Red;
+                label3.Text = "Folder Invalid!";
+            }
             else
             {
                 label3.ForeColor = Color.Red;
-                label3.Text = "File to Find Not Specified!";
+                label3.Text = "Search Mode Must be Selected!";
             }
         }
 
