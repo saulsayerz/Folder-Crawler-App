@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kg2/6oOcoQjlKldRHfA3AXK0Z9O5Y1EYh1hQSuXat44IR/0eg5uOeHL+xULaSIsc+4GAk2Kh1rNWrD9TTOIOGQ==",
+  "dgSpecHash": "xk8SpNU99o0BZj3LEXBlPSgsFnXlyhHIyMMDgR1nOkTBr0qPVaglaWekwJsz5J5x0VpQw6kCUvsYad3/7CLCkw==",
   "success": true,
   "projectFilePath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\FolderCrawler\\FolderCrawler.csproj",
   "expectedPackageFiles": [
@@ -8,36 +8,5 @@
     "C:\\Users\\kylet\\.nuget\\packages\\microsoft.msagl.drawing\\1.1.3\\microsoft.msagl.drawing.1.1.3.nupkg.sha512",
     "C:\\Users\\kylet\\.nuget\\packages\\microsoft.msagl.graphviewergdi\\1.1.3\\microsoft.msagl.graphviewergdi.1.1.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Msagl 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Msagl",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Msagl.Drawing 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Msagl.Drawing",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Msagl.GraphViewerGDI 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Msagl.GraphViewerGDI",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

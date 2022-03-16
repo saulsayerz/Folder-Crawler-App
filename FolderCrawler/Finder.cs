@@ -39,9 +39,9 @@ namespace FolderCrawler
     {
 
         // Attributes: 
-        private string curDir = default!; //tbh gatau knp harus = default!, tapi di komputerku kalau gk ada itu error
-        private string endFile = default! ;
-        private string foundDir = default!;
+        private string curDir; //tbh gatau knp harus = default!, tapi di komputerku kalau gk ada itu error
+        private string endFile;
+        private string foundDir;
         private Boolean found = false; //kondisi awal --> file belum ditemukan
         public List<Edge> Graf = new List<Edge>() ; // List of edges, misalnya [[A,B],[B,C]]
 

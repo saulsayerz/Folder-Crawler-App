@@ -1,0 +1,17 @@
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.AssemblyReference.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.SuggestedBindingRedirects.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.Form1.resources
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.GenerateResource.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.AssemblyInfoInputs.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.AssemblyInfo.cs
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.CoreCompileInputs.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\FolderCrawler.exe.config
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\FolderCrawler.exe
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\FolderCrawler.pdb
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.Drawing.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.CopyComplete
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.exe
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net4.8\FolderCrawler.pdb

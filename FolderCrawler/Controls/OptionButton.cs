@@ -19,7 +19,9 @@ namespace FolderCrawler.Controls
         public Color UnCheckedColor { get => unCheckedColor; set { unCheckedColor = value; this.Invalidate(); } }
         public OptionButton()
         {
-            this.MinimumSize = new Size(0, 21);
+            this.Size = new Size(70, 20);
+            this.MinimumSize = new Size(70, 20);
+            
        //Add a padding of 10 to the left to have a considerable distance between the text and the RadioButton.
             this.Padding = new Padding(10, 0, 0, 0);
         }
