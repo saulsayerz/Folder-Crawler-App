@@ -1,0 +1,7 @@
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.csproj.AssemblyReference.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.Form1.resources
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.csproj.GenerateResource.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.AssemblyInfoInputs.cache
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.AssemblyInfo.cs
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net5.0-windows\FolderCrawler.csproj.CoreCompileInputs.cache

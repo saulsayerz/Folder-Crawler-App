@@ -15,3 +15,7 @@ C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\refin
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.pdb
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.genruntimeconfig.cache
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\ref\FolderCrawler.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\Microsoft.Msagl.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\Microsoft.Msagl.Drawing.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\bin\Debug\net6.0-windows\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Sch\Sem4\Stima\Tubes2_DoiFinders\FolderCrawler\obj\Debug\net6.0-windows\FolderCrawler.csproj.CopyComplete

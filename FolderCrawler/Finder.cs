@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace FolderCrawler
 {
 
@@ -141,6 +142,7 @@ namespace FolderCrawler
         //Search for the file using the DFS algorithm.
         public bool DFS(){
 
+            this.found =false;
             // Check the current path first. Does it have the file we are searching for?
             this.checkFiles();
 
@@ -165,6 +167,7 @@ namespace FolderCrawler
         }
         public bool BFS(){
             //Check the start directory, does it have the file we're searching for?
+            this.found = false;
             this.checkFiles();
             
             //In case the file is not found, iterate for every subdirectory using BFS traverse

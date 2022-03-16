@@ -38,6 +38,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.graphPanel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.customButton1 = new FolderCrawler.Controls.CustomButton();
             this.SuspendLayout();
             // 
             // folderButton
@@ -90,7 +93,7 @@
             this.searchButton.FlatAppearance.BorderSize = 0;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.searchButton.Location = new System.Drawing.Point(12, 328);
+            this.searchButton.Location = new System.Drawing.Point(12, 225);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(134, 50);
             this.searchButton.TabIndex = 3;
@@ -103,7 +106,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 343);
+            this.label3.Location = new System.Drawing.Point(186, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 20);
             this.label3.TabIndex = 4;
@@ -158,7 +161,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 284);
+            this.textBox1.Location = new System.Drawing.Point(382, 147);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(283, 27);
             this.textBox1.TabIndex = 9;
@@ -169,18 +172,56 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 247);
+            this.label5.Location = new System.Drawing.Point(382, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "File To Find :";
+            // 
+            // graphPanel
+            // 
+            this.graphPanel.Location = new System.Drawing.Point(249, 335);
+            this.graphPanel.Name = "graphPanel";
+            this.graphPanel.Size = new System.Drawing.Size(715, 392);
+            this.graphPanel.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(564, 302);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Search Tree";
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.White;
+            this.customButton1.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 3;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.customButton1.Location = new System.Drawing.Point(12, 464);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(134, 50);
+            this.customButton1.TabIndex = 13;
+            this.customButton1.Text = "Test";
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(916, 593);
+            this.ClientSize = new System.Drawing.Size(1153, 750);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -210,5 +251,8 @@
         private Label label4;
         private TextBox textBox1;
         private Label label5;
+        private Panel graphPanel;
+        private Label label6;
+        private Controls.CustomButton customButton1;
     }
 }

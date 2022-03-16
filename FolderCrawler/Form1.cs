@@ -89,5 +89,18 @@ namespace FolderCrawler
         {
             selectedMethod = true;
         }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+            graph.AddEdge("A", "B");
+            viewer.Graph = graph;
+            graphPanel.SuspendLayout();
+            viewer.Dock = DockStyle.Fill;
+            graphPanel.Controls.Add(viewer);
+            graphPanel.ResumeLayout();
+            graphPanel.Show();
+        }
     }
 }
