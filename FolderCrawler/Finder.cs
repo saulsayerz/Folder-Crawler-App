@@ -30,20 +30,23 @@ namespace FolderCrawler
     /// BFS and DFS algorithm are inside this class
     /// The attributes are :
     /// 1. curDir : a string to determine the current directory we are traversing
-    /// 2. endFIle : a string, the name of the file we are trying to search for
-    /// 3. found : a boolean, true if the file is found so traverse is stopped
-    /// 4. foundDir : a string, the full path of the file we're searching for
-    /// 5. graf : a list of edges
+    /// 2. endFile : a string, the name of the file we are trying to search for
+    /// 3. foundDir : a list of string, array of the path to the solution
+    /// 4. graf : a list of edges, for example [A/B/C, A/B/C/D]. Sorted by time checked (1 for each step)
+    /// 5. itemWaitingList : an array of array of nodes which are items, the index means which step they enter the waiting list
+    /// 6. folderWaitingList : an array of array of nodes which are folders, the index means which step they enter the waiting list
     /// </summary>
     class folder
     {
 
         // Attributes: 
-        private string curDir; //tbh gatau knp harus = default!, tapi di komputerku kalau gk ada itu error
+        private string curDir; 
         private string endFile;
-        private string foundDir;
-        private Boolean found = false; //kondisi awal --> file belum ditemukan
-        public List<Edge> Graf = new List<Edge>() ; // List of edges, misalnya [[A,B],[B,C]]
+        private List<string> foundDir = new List<string>();
+        
+        private List<Edge> Graf = new List<Edge>() ; // List of edges, misalnya [[A,B],[B,C]]
+        private List<List<string>> itemWaitingList = new List<List<string>>(); // 
+        private List<List<string>> folderWaitingList = new List<List<string>>();
 
         // Getter 
         public string getCurDir()
@@ -56,16 +59,30 @@ namespace FolderCrawler
             return endFile;
         }
 
-        public bool getFound()
+        public bool found()
         {
-            return found;
+            return foundDir.Count > 0;
         }
 
-        public string getFoundDir()
+        public List<string> getFoundDir()
         {
             return foundDir;
         }
         
+        public List<Edge> getGraf()
+        {
+            return Graf;
+        }
+
+        public List<List<string>> getItemWaitingList()
+        {
+            return itemWaitingList;
+        }
+
+        public List<List<string>> getFolderWaitingList()
+        {
+            return folderWaitingList;
+        }
 
         // Setter 
         public void setCurDir(string newCurDir)
@@ -76,16 +93,6 @@ namespace FolderCrawler
         public void setEndFile(string newEndFile)
         {
             this.endFile = newEndFile; 
-        }
-        
-        public void setFound(bool newFound)
-        {
-            this.found = newFound; 
-        }
-
-        public void setFoundDir(string newFoundDir)
-        {
-            this.foundDir = newFoundDir;
         }
 
 
@@ -119,13 +126,14 @@ namespace FolderCrawler
         public void checkFiles(){
             string[] listOfFiles = Directory.GetFiles(this.getCurDir());
             string namafile = null;
+            this.itemWaitingList.Add(listOfFiles.ToList());
+
             foreach (var item in listOfFiles) 
             {
                 namafile = Path.GetFileName(item);
                 if (namafile == this.getEndFile()) 
                 {
-                    this.found = true;
-                    setFoundDir(item);
+                    this.foundDir.Add(item);
                     break;
                 }
             }
@@ -139,54 +147,58 @@ namespace FolderCrawler
             }) ;
         }
 
-        //Search for the file using the DFS algorithm.
-        public bool DFS(){
+        // Must be used everytime we try to search again to reset everything
+        public void clearEverything() {
+            itemWaitingList.Clear() ;
+            folderWaitingList.Clear() ;
+            foundDir.Clear() ;
+            Graf.Clear() ;
+        }
 
-            this.found =false;
+        //Search for the file using the DFS algorithm.
+        public void DFS(bool allOccurence){
+
             // Check the current path first. Does it have the file we are searching for?
             this.checkFiles();
 
-            // If file is not present in the current path, we continue to traverse for each subdirectory.
-            if (!this.found)
+            //In case the file is not found, iterate for every subdirectory using DFS traverse
+            string[] listOfSubDir = Directory.GetDirectories(this.getCurDir());
+            this.folderWaitingList.Add(listOfSubDir.ToList());
+            string tempStartDir = this.getCurDir();
+
+            foreach (var item in listOfSubDir) 
             {
-                string[] listOfSubDir = Directory.GetDirectories(this.getCurDir());
-                string tempStartDir = this.getCurDir();
-                foreach (var item in listOfSubDir) 
+                if (this.found() && !allOccurence) 
                 {
-                    if (this.found) 
-                    {
-                        break;
-                    }
-                    this.setCurDir(item);
-                    addToGraf();
-                    this.found = this.DFS();
+                    break;
                 }
-                this.setCurDir(tempStartDir); // to reset the startDir the way it was
+                this.setCurDir(item);
+                addToGraf();
+                this.DFS(allOccurence);
             }
-            return this.found;
+            this.setCurDir(tempStartDir); // to reset the startDir the way it was
         }
-        public bool BFS(){
+        public void BFS(bool allOccurence){
+
             //Check the start directory, does it have the file we're searching for?
-            this.found = false;
             this.checkFiles();
             
             //In case the file is not found, iterate for every subdirectory using BFS traverse
             string[] listOfSubDir = Directory.GetDirectories(this.getCurDir());
+            this.folderWaitingList.Add(listOfSubDir.ToList());
             string tempStartDir = this.getCurDir();
 
-            while (!this.found && listOfSubDir.Any())
+            while (((!allOccurence && !this.found()) || allOccurence) && listOfSubDir.Any())
             {
                 this.setCurDir(listOfSubDir[0]);
                 addToGraf();
                 this.checkFiles();
+                this.folderWaitingList.Add(Directory.GetDirectories(this.getCurDir()).ToList());
                 listOfSubDir = listOfSubDir.Concat(Directory.GetDirectories(this.getCurDir())).ToArray();
                 listOfSubDir = listOfSubDir.Where(path => path != listOfSubDir[0]).ToArray(); // Remove the first path on the list
-
             }
 
             this.setCurDir(tempStartDir); // to reset the startDir the way it was
-           
-            return this.found;
         }
     }
 
@@ -196,29 +208,46 @@ namespace FolderCrawler
         /// Main class to run, implement, test, and debug the search algorithm
         /// </summary>
         static void Main(string[] args) {
-            bool found = false;
             folder start = new folder();
             start.inputSearch();
 
             int choice = start.chooseAlgorithm();
             if (choice == 2)
             {
-                found = start.BFS();
+                start.BFS(true);
             }
             else 
             {
-                found = start.DFS();
+                start.DFS(true);
             }
 
-            Console.WriteLine("\nList of edges: ");
+            Console.WriteLine("\nUrutan traverse: ");
             foreach (var item in start.Graf)
             {
                 item.print();
             }
 
             Console.WriteLine("");
-            Console.WriteLine(Path.GetDirectoryName("test"));
-            Console.WriteLine(Path.GetFileName("test"));
+            Console.WriteLine("ITEM WAITING LIST:");
+            int count = 0;
+            foreach (var anotherlist in start.itemWaitingList){
+                count += 1;
+                Console.WriteLine("Step ke-" + count.ToString() + ": ");
+                foreach(var item in anotherlist) {
+                    Console.WriteLine(item);
+                }
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("FOLDER WAITING LIST:");
+            count = 0;
+            foreach (var anotherlist in start.folderWaitingList){
+                count += 1;
+                Console.WriteLine("Step ke-" + count.ToString() + ": ");
+                foreach(var item in anotherlist) {
+                    Console.WriteLine(item);
+                }
+            }
         }
     }*/
 }

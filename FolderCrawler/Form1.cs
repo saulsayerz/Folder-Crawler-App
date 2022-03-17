@@ -46,10 +46,10 @@ namespace FolderCrawler
                     startFolder.setEndFile(textBox1.Text);
                     if (BFS_optButton.Checked)
                     {
-                        
-                        if (startFolder.BFS())
+                        startFolder.BFS(false);
+                        if (startFolder.found())
                         {
-                            label3.Text = startFolder.getFoundDir();
+                            label3.Text = startFolder.getFoundDir()[0]; 
                         }
                         else
                         {
@@ -58,9 +58,10 @@ namespace FolderCrawler
                     }
                     else
                     {
-                        if (startFolder.DFS())
+                        startFolder.DFS(false);
+                        if (startFolder.found())
                         {
-                            label3.Text = startFolder.getFoundDir();
+                            label3.Text = startFolder.getFoundDir()[0]; 
                         }
                
                         else
@@ -89,7 +90,7 @@ namespace FolderCrawler
         {
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            graph.AddEdge("A", "B");
+            graph.AddEdge("test", "test1");
             viewer.Graph = graph;
             graphPanel.SuspendLayout();
             viewer.Dock = DockStyle.Fill;
