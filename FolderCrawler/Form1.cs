@@ -46,7 +46,7 @@ namespace FolderCrawler
                     startFolder.setEndFile(textBox1.Text);
                     if (BFS_optButton.Checked)
                     {
-                        startFolder.BFS(false);
+                        startFolder.BFS(toggleButton1.Checked);
                         if (startFolder.found())
                         {
                             label3.Text = startFolder.getFoundDir()[0]; 
@@ -58,7 +58,7 @@ namespace FolderCrawler
                     }
                     else
                     {
-                        startFolder.DFS(false);
+                        startFolder.DFS(toggleButton1.Checked);
                         if (startFolder.found())
                         {
                             label3.Text = startFolder.getFoundDir()[0]; 
@@ -98,5 +98,6 @@ namespace FolderCrawler
             graphPanel.ResumeLayout();
             graphPanel.Show();
         }
+
     }
 }
