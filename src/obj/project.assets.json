@@ -1,26 +1,52 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Microsoft.Msagl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Msagl.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Msagl.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.Msagl/1.1.3": {
+      "sha512": "Oi/wGHtUk19l79Sx/8YNAWcfbKRwncTeO7zy4ELS33K4+Ln4tEkW3GuiklPrHWMAl519859fOZjUV/TsxI8y9w==",
+      "type": "package",
+      "path": "microsoft.msagl/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Msagl.XML",
+        "lib/net40/Microsoft.Msagl.dll",
+        "microsoft.msagl.1.1.3.nupkg.sha512",
+        "microsoft.msagl.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Microsoft.Msagl >= 1.1.3"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\kylet\\.nuget\\packages\\": {}
+    "C:\\Users\\micha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj",
+      "projectUniqueName": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj",
-      "packagesPath": "C:\\Users\\kylet\\.nuget\\packages\\",
-      "outputPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\obj\\",
+      "projectPath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\src.csproj",
+      "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
+      "outputPath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kylet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -45,6 +71,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Microsoft.Msagl": {
+            "target": "Package",
+            "version": "[1.1.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -63,5 +95,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Msagl 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Msagl",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

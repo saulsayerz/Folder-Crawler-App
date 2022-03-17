@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "MVn28jMQxs1Jj625idIXZJU59uSn4RdBXfqbyB51LBAYL/+LjmKTEU2bY2IMQ5VSHpQo8v3NyFRglUplYTVRQw==",
+  "dgSpecHash": "wAOUEOGCyDDoI4s8agkglHMsagfkWZXPkry8T2n1puFHo0VU2UD9NqqcqaaIu5n7ct2gkl9o41xoQP0x5eJ1pQ==",
   "success": true,
-  "projectFilePath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\src.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\src.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.msagl\\1.1.3\\microsoft.msagl.1.1.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Msagl 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Msagl",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
