@@ -13,6 +13,8 @@ namespace FolderCrawler
         Boolean selectedMethod;
         string startDir;
         folder startFolder;
+        Microsoft.Msagl.GraphViewerGdi.GViewer viewer;
+        Microsoft.Msagl.Drawing.Graph graph;
         public Form1()
         {
             validFolder = false;
@@ -69,8 +71,9 @@ namespace FolderCrawler
                     if (startFolder.found())
                     {
                         label3.Text = startFolder.getFoundDir()[0];
-                        Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                        Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+                        viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                        graph = new Microsoft.Msagl.Drawing.Graph("graph");
+                        graphPanel.Show();
                         for (int j = 0; j < G.Count; j++)
                         {
                             string[] parts_start = G[j].start.Split(Path.DirectorySeparatorChar);
@@ -87,6 +90,12 @@ namespace FolderCrawler
                             var start = graph.FindNode(G[j].start);
                             end.LabelText = parts_end[parts_end.Length - 1];
                             start.LabelText = parts_start[parts_start.Length - 1];
+                            viewer.Graph = graph;
+                            graphPanel.SuspendLayout();
+                            viewer.Dock = DockStyle.Fill;
+                            graphPanel.Controls.Add(viewer);
+                            graphPanel.ResumeLayout();
+                            sleep(500);
                         }
                         bool found = false;
                         for (int i = 0; i < daftarFile.Count; i++)
@@ -119,6 +128,12 @@ namespace FolderCrawler
                                     end.LabelText = parts[parts.Length - 1];
                                     start.LabelText = parts[parts.Length - 2];
                                 }
+                            viewer.Graph = graph;
+                            graphPanel.SuspendLayout();
+                            viewer.Dock = DockStyle.Fill;
+                            graphPanel.Controls.Add(viewer);
+                            graphPanel.ResumeLayout();
+                            sleep(500);
                             }
                         }
                         if (found)
@@ -168,13 +183,6 @@ namespace FolderCrawler
                                 }
                             }
                         }
-                        viewer.Graph = graph;
-                        graphPanel.SuspendLayout();
-                        viewer.Dock = DockStyle.Fill;
-                        graphPanel.Controls.Add(viewer);
-                        graphPanel.ResumeLayout();
-                        graphPanel.Show();
-                        System.Threading.Thread.Sleep(2300);
                     }
                     else
                     {
@@ -196,7 +204,7 @@ namespace FolderCrawler
                             end.LabelText = parts_end[parts_end.Length - 1];
                             start.LabelText = parts_start[parts_start.Length - 1];
                             viewer.Graph = graph;
-                            System.Threading.Thread.Sleep(1000);
+                            sleep(1000);
                         }
                         for (int i = 0; i < daftarFile.Count; i++)
                         {
@@ -220,7 +228,7 @@ namespace FolderCrawler
                         graphPanel.Controls.Add(viewer);
                         graphPanel.ResumeLayout();
                         graphPanel.Show(); */
-                        System.Threading.Thread.Sleep(2300);
+                        sleep(500);
                     }
 
                 }
@@ -239,6 +247,29 @@ namespace FolderCrawler
             }
             startFolder.clearEverything();
         }
+        public void sleep(int ms)
+        {
+            var stopwatch = new System.Windows.Forms.Timer();
+            if (ms > 0) {
+                stopwatch.Interval = ms;
+                stopwatch.Enabled = true;
+                stopwatch.Start();
+
+                stopwatch.Tick += (s, e) =>
+                {
+                    stopwatch.Enabled = false;
+                    stopwatch.Stop();
+                };
+
+                while (stopwatch.Enabled)
+                {
+                    Application.DoEvents();
+                }
+            }
+
+
+        }
+
 
         private void customButton1_Click(object sender, EventArgs e)
         {
