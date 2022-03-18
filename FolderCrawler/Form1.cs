@@ -42,6 +42,7 @@ namespace FolderCrawler
         private void searchButton_Click(object sender, EventArgs e)
         {
             startFolder.clearEverything();
+            graphPanel.Controls.Clear();
             if (validFolder)
             {
                 label3.ForeColor = Color.Black;
