@@ -59,7 +59,17 @@ namespace FolderCrawler
                         startFolder.DFS(toggleButton1.Checked);
                     }
                     if (startFolder.found())
-                    {
+                    {   
+                        foreach (var link in startFolder.getFoundDir())
+                        {
+                            LinkLabel newLink = new LinkLabel();
+                            newLink.Text = link;
+                            newLink.AutoSize = true;
+                            newLink.Click += new EventHandler(linkClick);
+                            flowLayoutPanel1.Controls.Add(newLink);
+
+                        }                  
+                       
                         label3.Text = startFolder.getFoundDir()[0];
                     }
                     else
@@ -286,6 +296,12 @@ namespace FolderCrawler
             graphPanel.Controls.Add(viewer);
             graphPanel.ResumeLayout();
             graphPanel.Show();
+        }
+
+        void linkClick(Object sender, EventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            System.Diagnostics.Process.Start("explorer.exe", link.Text);
         }
 
     }

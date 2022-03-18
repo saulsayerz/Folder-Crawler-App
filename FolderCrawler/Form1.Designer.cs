@@ -38,13 +38,14 @@ namespace FolderCrawler
             this.label5 = new System.Windows.Forms.Label();
             this.graphPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.toggleButton1 = new FolderCrawler.Controls.ToggleButton();
             this.DFS_optButton = new FolderCrawler.Controls.OptionButton();
             this.BFS_optButton = new FolderCrawler.Controls.OptionButton();
-            this.customButton1 = new FolderCrawler.Controls.CustomButton();
             this.searchButton = new FolderCrawler.Controls.CustomButton();
             this.folderButton = new FolderCrawler.Controls.CustomButton();
-            this.toggleButton1 = new FolderCrawler.Controls.ToggleButton();
-            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,10 +55,9 @@ namespace FolderCrawler
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(161, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(215, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Starting Directory :";
             // 
@@ -66,10 +66,9 @@ namespace FolderCrawler
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 41);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(215, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "None Selected";
             // 
@@ -78,10 +77,9 @@ namespace FolderCrawler
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 185);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(180, 228);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Path";
             // 
@@ -90,19 +88,18 @@ namespace FolderCrawler
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 72);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(24, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
+            this.label4.Size = new System.Drawing.Size(129, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Select Search Mode";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(286, 96);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(381, 118);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
+            this.textBox1.Size = new System.Drawing.Size(283, 22);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "Example.jpg";
             // 
@@ -111,10 +108,9 @@ namespace FolderCrawler
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 72);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(381, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "File To Find :";
             // 
@@ -123,31 +119,76 @@ namespace FolderCrawler
             this.graphPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.graphPanel.Location = new System.Drawing.Point(187, 243);
-            this.graphPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.graphPanel.Location = new System.Drawing.Point(593, 307);
+            this.graphPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.graphPanel.Name = "graphPanel";
-            this.graphPanel.Size = new System.Drawing.Size(536, 273);
+            this.graphPanel.Size = new System.Drawing.Size(630, 336);
             this.graphPanel.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(424, 218);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(879, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.Size = new System.Drawing.Size(82, 16);
             this.label6.TabIndex = 12;
             this.label6.Text = "Search Tree";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(381, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 16);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Find All Occurence";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 307);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(541, 335);
+            this.flowLayoutPanel1.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(251, 274);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 16);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Found Links";
+            // 
+            // toggleButton1
+            // 
+            this.toggleButton1.AutoSize = true;
+            this.toggleButton1.Location = new System.Drawing.Point(543, 170);
+            this.toggleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.toggleButton1.MinimumSize = new System.Drawing.Size(60, 27);
+            this.toggleButton1.Name = "toggleButton1";
+            this.toggleButton1.OffBackColor = System.Drawing.Color.Gray;
+            this.toggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.toggleButton1.OnBackColor = System.Drawing.Color.DodgerBlue;
+            this.toggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.toggleButton1.Size = new System.Drawing.Size(111, 27);
+            this.toggleButton1.SolidStyle = true;
+            this.toggleButton1.TabIndex = 16;
+            this.toggleButton1.Text = "toggleButton1";
+            this.toggleButton1.UseVisualStyleBackColor = true;
             // 
             // DFS_optButton
             // 
             this.DFS_optButton.AutoSize = true;
             this.DFS_optButton.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.DFS_optButton.Location = new System.Drawing.Point(12, 135);
-            this.DFS_optButton.MinimumSize = new System.Drawing.Size(70, 20);
+            this.DFS_optButton.Location = new System.Drawing.Point(16, 166);
+            this.DFS_optButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DFS_optButton.MinimumSize = new System.Drawing.Size(93, 25);
             this.DFS_optButton.Name = "DFS_optButton";
-            this.DFS_optButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.DFS_optButton.Size = new System.Drawing.Size(70, 20);
+            this.DFS_optButton.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.DFS_optButton.Size = new System.Drawing.Size(93, 25);
             this.DFS_optButton.TabIndex = 15;
             this.DFS_optButton.Text = "DFS";
             this.DFS_optButton.UnCheckedColor = System.Drawing.Color.DodgerBlue;
@@ -158,34 +199,17 @@ namespace FolderCrawler
             this.BFS_optButton.AutoSize = true;
             this.BFS_optButton.Checked = true;
             this.BFS_optButton.CheckedColor = System.Drawing.Color.SlateBlue;
-            this.BFS_optButton.Location = new System.Drawing.Point(12, 104);
-            this.BFS_optButton.MinimumSize = new System.Drawing.Size(70, 20);
+            this.BFS_optButton.Location = new System.Drawing.Point(16, 128);
+            this.BFS_optButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BFS_optButton.MinimumSize = new System.Drawing.Size(93, 25);
             this.BFS_optButton.Name = "BFS_optButton";
-            this.BFS_optButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BFS_optButton.Size = new System.Drawing.Size(70, 20);
+            this.BFS_optButton.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.BFS_optButton.Size = new System.Drawing.Size(93, 25);
             this.BFS_optButton.TabIndex = 14;
             this.BFS_optButton.TabStop = true;
             this.BFS_optButton.Text = "BFS";
             this.BFS_optButton.UnCheckedColor = System.Drawing.Color.DodgerBlue;
             this.BFS_optButton.UseVisualStyleBackColor = true;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.White;
-            this.customButton1.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.customButton1.BorderRadius = 30;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.customButton1.Location = new System.Drawing.Point(9, 301);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(113, 37);
-            this.customButton1.TabIndex = 13;
-            this.customButton1.Text = "Test";
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // searchButton
             // 
@@ -196,10 +220,10 @@ namespace FolderCrawler
             this.searchButton.FlatAppearance.BorderSize = 0;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.searchButton.Location = new System.Drawing.Point(9, 172);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.searchButton.Location = new System.Drawing.Point(12, 212);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(113, 38);
+            this.searchButton.Size = new System.Drawing.Size(151, 47);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Find File";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -214,54 +238,27 @@ namespace FolderCrawler
             this.folderButton.FlatAppearance.BorderSize = 0;
             this.folderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.folderButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.folderButton.Location = new System.Drawing.Point(9, 16);
-            this.folderButton.Margin = new System.Windows.Forms.Padding(2);
+            this.folderButton.Location = new System.Drawing.Point(12, 20);
+            this.folderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.folderButton.Name = "folderButton";
-            this.folderButton.Size = new System.Drawing.Size(113, 38);
+            this.folderButton.Size = new System.Drawing.Size(151, 47);
             this.folderButton.TabIndex = 0;
             this.folderButton.Text = "Choose Start Folder";
             this.folderButton.UseVisualStyleBackColor = false;
             this.folderButton.Click += new System.EventHandler(this.folderButton_Click);
             // 
-            // toggleButton1
-            // 
-            this.toggleButton1.AutoSize = true;
-            this.toggleButton1.Location = new System.Drawing.Point(407, 138);
-            this.toggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleButton1.Name = "toggleButton1";
-            this.toggleButton1.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleButton1.OnBackColor = System.Drawing.Color.DodgerBlue;
-            this.toggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleButton1.Size = new System.Drawing.Size(92, 22);
-            this.toggleButton1.SolidStyle = true;
-            this.toggleButton1.TabIndex = 16;
-            this.toggleButton1.Text = "toggleButton1";
-            this.toggleButton1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(286, 142);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Find All Occurence";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(865, 531);
+            this.ClientSize = new System.Drawing.Size(1339, 654);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.toggleButton1);
             this.Controls.Add(this.DFS_optButton);
             this.Controls.Add(this.BFS_optButton);
-            this.Controls.Add(this.customButton1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.label5);
@@ -272,7 +269,7 @@ namespace FolderCrawler
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.folderButton);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "FolderCrawler";
             this.ResumeLayout(false);
@@ -292,10 +289,11 @@ namespace FolderCrawler
         private Label label5;
         private Panel graphPanel;
         private Label label6;
-        private Controls.CustomButton customButton1;
         private Controls.OptionButton BFS_optButton;
         private Controls.OptionButton DFS_optButton;
         private Controls.ToggleButton toggleButton1;
         private Label label7;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label8;
     }
 }
