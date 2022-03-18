@@ -42,6 +42,7 @@ namespace FolderCrawler
         private void searchButton_Click(object sender, EventArgs e)
         {
             startFolder.clearEverything();
+            graphPanel.Controls.Clear();
             if (validFolder)
             {
                 label3.ForeColor = Color.Black;
@@ -58,7 +59,17 @@ namespace FolderCrawler
                         startFolder.DFS(toggleButton1.Checked);
                     }
                     if (startFolder.found())
-                    {
+                    {   
+                        foreach (var link in startFolder.getFoundDir())
+                        {
+                            LinkLabel newLink = new LinkLabel();
+                            newLink.Text = link;
+                            newLink.AutoSize = true;
+                            newLink.Click += new EventHandler(linkClick);
+                            flowLayoutPanel1.Controls.Add(newLink);
+
+                        }                  
+                       
                         label3.Text = startFolder.getFoundDir()[0];
                     }
                     else
@@ -70,7 +81,6 @@ namespace FolderCrawler
                     List<List<string>> daftarFolder = startFolder.getFolderWaitingList();
                     if (startFolder.found())
                     {
-                        label3.Text = startFolder.getFoundDir()[0];
                         viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                         graph = new Microsoft.Msagl.Drawing.Graph("graph");
                         graphPanel.Show();
@@ -281,11 +291,6 @@ namespace FolderCrawler
                             }
                         }
                         viewer.Graph = graph;
-                        /* graphPanel.SuspendLayout();
-                        viewer.Dock = DockStyle.Fill;
-                        graphPanel.Controls.Add(viewer);
-                        graphPanel.ResumeLayout();
-                        graphPanel.Show(); */
                         sleep(500);
                     }
                 }
@@ -340,6 +345,12 @@ namespace FolderCrawler
             graphPanel.Controls.Add(viewer);
             graphPanel.ResumeLayout();
             graphPanel.Show();
+        }
+
+        void linkClick(Object sender, EventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            System.Diagnostics.Process.Start("explorer.exe", Path.GetDirectoryName(link.Text));
         }
 
     }
