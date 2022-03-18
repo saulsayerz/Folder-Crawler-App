@@ -41,11 +41,16 @@ namespace FolderCrawler
             this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.toggleButton1 = new FolderCrawler.Controls.ToggleButton();
             this.DFS_optButton = new FolderCrawler.Controls.OptionButton();
             this.BFS_optButton = new FolderCrawler.Controls.OptionButton();
             this.searchButton = new FolderCrawler.Controls.CustomButton();
             this.folderButton = new FolderCrawler.Controls.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,9 +84,8 @@ namespace FolderCrawler
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(180, 228);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 16);
+            this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Path";
             // 
             // label4
             // 
@@ -119,16 +123,16 @@ namespace FolderCrawler
             this.graphPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.graphPanel.Location = new System.Drawing.Point(593, 307);
+            this.graphPanel.Location = new System.Drawing.Point(632, 306);
             this.graphPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.graphPanel.Name = "graphPanel";
-            this.graphPanel.Size = new System.Drawing.Size(630, 336);
+            this.graphPanel.Size = new System.Drawing.Size(663, 336);
             this.graphPanel.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(879, 274);
+            this.label6.Location = new System.Drawing.Point(920, 274);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 16);
             this.label6.TabIndex = 12;
@@ -147,20 +151,62 @@ namespace FolderCrawler
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 307);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(541, 335);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(530, 335);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(251, 274);
+            this.label8.Location = new System.Drawing.Point(233, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 16);
             this.label8.TabIndex = 19;
             this.label8.Text = "Found Links";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(810, 118);
+            this.trackBar1.Maximum = 2000;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(278, 56);
+            this.trackBar1.TabIndex = 20;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(818, 89);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 16);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Graph Search Interval";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1113, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 16);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "0 ms";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(818, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 16);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Algorithm Time:";
             // 
             // toggleButton1
             // 
@@ -253,6 +299,10 @@ namespace FolderCrawler
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1339, 654);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label7);
@@ -272,6 +322,7 @@ namespace FolderCrawler
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "FolderCrawler";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +346,9 @@ namespace FolderCrawler
         private Label label7;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label8;
+        private TrackBar trackBar1;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }

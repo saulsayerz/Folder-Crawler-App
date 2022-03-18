@@ -4,13 +4,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 
 namespace FolderCrawler
 {
     public partial class Form1 : Form
     {
         Boolean validFolder;
-        Boolean selectedMethod;
         string startDir;
         folder startFolder;
         Microsoft.Msagl.GraphViewerGdi.GViewer viewer;
@@ -18,7 +18,6 @@ namespace FolderCrawler
         public Form1()
         {
             validFolder = false;
-            selectedMethod = false;
             startFolder = new folder();
             InitializeComponent();
         }
@@ -46,27 +45,33 @@ namespace FolderCrawler
             viewer.Dock = DockStyle.Fill;
             graphPanel.Controls.Add(viewer);
             graphPanel.ResumeLayout();
-            sleep(500);
+            sleep(trackBar1.Value);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             startFolder.clearEverything();
             graphPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             if (validFolder)
             {
-                label3.ForeColor = Color.Black;
                 if (!String.IsNullOrEmpty(textBox1.Text))
                 {
                     startFolder.setCurDir(startDir);
                     startFolder.setEndFile(textBox1.Text);
                     if (BFS_optButton.Checked)
                     {
+                        Stopwatch sw = Stopwatch.StartNew();
                         startFolder.BFS(toggleButton1.Checked);
+                        sw.Stop();
+                        label11.Text = "Algorithm Time: " + sw.ElapsedMilliseconds.ToString() + " ms";
                     }
                     else
                     {
+                        Stopwatch sw = Stopwatch.StartNew();
                         startFolder.DFS(toggleButton1.Checked);
+                        sw.Stop();
+                        label11.Text = "Algorithm Time: " + sw.ElapsedMilliseconds.ToString() + " ms";
                     }
                     if (startFolder.found())
                     {   
@@ -79,10 +84,10 @@ namespace FolderCrawler
                             flowLayoutPanel1.Controls.Add(newLink);
 
                         }                  
-                        label3.Text = startFolder.getFoundDir()[0];
                     }
                     else
                     {
+                        label3.ForeColor = Color.Black;
                         label3.Text = "File Not Found";
                     }
                     List<Edge> G = startFolder.getGraf();
@@ -262,12 +267,7 @@ namespace FolderCrawler
                                     end.LabelText = parts_end[parts_end.Length - 1];
                                     start.LabelText = parts_start[parts_start.Length - 1];
 
-                                    viewer.Graph = graph;
-                                    graphPanel.SuspendLayout();
-                                    viewer.Dock = DockStyle.Fill;
-                                    graphPanel.Controls.Add(viewer);
-                                    graphPanel.ResumeLayout();
-                                    sleep(500);
+                                    refresh_graph(graph, viewer);
                                 }
                             }
                             for (int j = 0; j < daftarFolder[i].Count; j++)
@@ -310,15 +310,10 @@ namespace FolderCrawler
                     }
                 }
             }
-            else if (!validFolder)
-            {
-                label3.ForeColor = Color.Red;
-                label3.Text = "Folder Invalid!";
-            }
             else
             {
                 label3.ForeColor = Color.Red;
-                label3.Text = "Search Mode Must be Selected!";
+                label3.Text = "Folder Invalid!";
             }
             startFolder.clearEverything();
         }
@@ -368,5 +363,9 @@ namespace FolderCrawler
             System.Diagnostics.Process.Start("explorer.exe", Path.GetDirectoryName(link.Text));
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            label10.Text = trackBar1.Value.ToString() + " ms";
+        }
     }
 }
