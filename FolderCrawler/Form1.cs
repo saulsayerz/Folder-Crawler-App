@@ -301,7 +301,7 @@ namespace FolderCrawler
         void linkClick(Object sender, EventArgs e)
         {
             LinkLabel link = (LinkLabel)sender;
-            System.Diagnostics.Process.Start("explorer.exe", link.Text);
+            System.Diagnostics.Process.Start("explorer.exe", Path.GetDirectoryName(link.Text));
         }
 
     }
