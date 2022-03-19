@@ -14,10 +14,7 @@ Repository program Folder Crawler ini dibuat untuk memenuhi **Tugas Besar Mata K
   - [Author](#author)
 
 ## Program Description
-Apabila kita melupakan letak sebuah file dalam suatu folder, tentu membutuhkan waktu yang lama apabila kita mencarinya secara manual. Hal tersebut dikarenakan dalam pencariannya, kita harus memeriksa beberapa subdirektori lagi dan memeriksa subdirektori yang ada di dalamnya lagi hingga file yang kita inginkan ditemukan. Namun, sekarang sudah ditemukan sebuah metode dinamakan *Folder Crawling* di mana kita bisa memasukkan sebuah query nama file yang ingin kita cari dan direktori folder awal yang ingin kita cari, kemudian akan ditampilkan path dari file yang ingin kita cari. 
-
-Program kami merupakan program berbasis GUI yang ditulis dalam bahasa C# untuk menerapkan teknik *Folder Crawling* tersebut. Program akan mulai
-mencari file yang sesuai dengan query mulai dari starting directory hingga seluruh children dari starting directory tersebut sampai satu file pertama/seluruh file ditemukan (user dapat memilih) atau tidak ada file yang ditemukan. Progress pencarian file tersebut akan ditampilkan dalam bentuk pohon per-langkahnya. Dalam visualisasi grafnya, simpul dan sisi akan ditandai dengan 3 warna yang masing - masingnya memiliki warna :
+Program kami merupakan program berbasis GUI yang ditulis dalam bahasa C# untuk mengimplementasikan *Folder Crawling*, yakni proses pencarian path suatu file dengan memasukkan sebuah query nama file yang ingin kita cari dan direktori folder awal yang ingin kita cari, kemudian akan ditampilkan path dari file yang ingin kita cari. Program akan mulai mencari file yang sesuai dengan query mulai dari starting directory hingga seluruh children dari starting directory tersebut sampai satu file pertama/seluruh file ditemukan (user dapat memilih) atau tidak ada file yang ditemukan. Progress pencarian file tersebut akan ditampilkan dalam bentuk pohon per-langkahnya. Dalam visualisasi grafnya, simpul dan sisi akan ditandai dengan 3 warna yang masing - masingnya memiliki warna :
 - Hitam : Simpul tersebut sudah ditemukan dan masuk waiting list untuk pengecekan, namun belum diperiksa.
 - Merah : Simpul tersebut sudah diperiksa, namun bukan merupakan solusi dari query file yang kita cari.
 - Biru : Simpul tersebut sudah diperiksa dan merupakan solusi query file yang kita cari.
