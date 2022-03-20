@@ -121,6 +121,8 @@ namespace FolderCrawler
                                                 if(startFolder.getFoundDir()[k].Contains(edge.Target))
                                                 {
                                                     edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                                                    graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
+                                                    graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
                                                 }
                                             }
                                             found = true;
@@ -156,8 +158,7 @@ namespace FolderCrawler
                                     if(String.Equals(edge.Target,G[i].end))
                                     {
                                         edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                contain = true;
-
+                                        contain = true;
                                     } 
                                     else
                                     {
@@ -174,53 +175,97 @@ namespace FolderCrawler
                                     refresh_graph(graph,viewer);
                                 }
                             }
-                            if(found == true || found == false)
+                            for (int j = 0; j < daftarFolder[i].Count; j++)
                             {
-                                for (int j = 0; j < daftarFolder[i].Count; j++)
+                                bool contain = false;
+                                foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
                                 {
-                                    bool contain = false;
-                                    foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
-                                    {
               
-                                        if(String.Equals(edge.Target,daftarFolder[i][j]))
-                                        {
-                                            edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                            contain = true;
-                                            break;
-                                        } 
-                                        else
-                                        {
-                                            continue;
-                                        }
-                                    }
-                                    if(!contain)
+                                    if(String.Equals(edge.Target,daftarFolder[i][j]))
                                     {
-                                        string[] parts = daftarFolder[i][j].Split(Path.DirectorySeparatorChar);
-                                        string parent = System.IO.Directory.GetParent(daftarFolder[i][j]).FullName;
-                                        if(toggleButton1.Checked)
-                                        {
-                                            graph.AddEdge(parent, daftarFolder[i][j]).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                        } 
-                                        else
-                                        {
-                                            graph.AddEdge(parent, daftarFolder[i][j]);
+                                        edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                                        if(j == daftarFolder[i].Count - 1)
+                                        {   bool founded = false;
+                                            if(toggleButton1.Checked)
+                                            {
+                                                for(int k = 0; k < startFolder.getFoundDir().Count; k++)
+                                                {
+                                                    if(startFolder.getFoundDir()[k].Contains(edge.Source)) {
+                                                        founded = true;
+                                                        break;
+                                                    }
+                                                }
+                                            }
                                         }
-                                        var end = graph.FindNode(daftarFolder[i][j]);
-                                        var start = graph.FindNode(parent);
-                                        end.LabelText = parts[parts.Length - 1];
-                                        start.LabelText = parts[parts.Length - 2];
+                                        contain = true;
+                                        break;
+                                    } 
+                                }
+                                if(!contain)
+                                {
+                                    string[] parts = daftarFolder[i][j].Split(Path.DirectorySeparatorChar);
+                                    string parent = System.IO.Directory.GetParent(daftarFolder[i][j]).FullName;
+                                    if(toggleButton1.Checked)
+                                    {
+                                        graph.AddEdge(parent, daftarFolder[i][j]).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                                    } 
+                                    else
+                                    {
+                                        graph.AddEdge(parent, daftarFolder[i][j]);
                                     }
-                                    refresh_graph(graph,viewer);
+                                    var end = graph.FindNode(daftarFolder[i][j]);
+                                    var start = graph.FindNode(parent);
+                                    end.LabelText = parts[parts.Length - 1];
+                                    start.LabelText = parts[parts.Length - 2];
                                 }
                                 refresh_graph(graph,viewer);
                             }
-                           
+                        }
+                        foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
+                        {
+                            bool founded = false;
+                            bool founded1 = false;
+                            for(int j = 0; j < startFolder.getFoundDir().Count; j++)
+                            {
+                                if(startFolder.getFoundDir()[j].Contains(edge.Target))
+                                {
+                                    founded = true;
+                                }
+                                if(startFolder.getFoundDir()[j].Contains(edge.Source))
+                                {
+                                    founded1 = true;
+                                }
+                                if(founded && founded1)
+                                {
+                                    break;
+                                }
+                            }
+                            if(true)
+                            {
+                                if(!founded1 && !founded)
+                                {
+                                    graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                                }
+                                for(int j = 0; j < G.Count; j++) 
+                                { 
+                                    if(String.Equals(G[j].start,edge.Source) && !founded1)
+                                    {
+                                        graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                                    }
+                                    for(int k = 0; k < daftarFile[j].Count; k++)
+                                    {
+                                        if((String.Equals(daftarFile[j][k],edge.Target) || toggleButton1.Checked) && !founded)
+                                        {
+                                            graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                                        }
+                                    }
+                                }
+                            }
                         }
                          refresh_graph(graph,viewer);
                     }
                     else
                     {
-                        label3.Text = "File Not Found";
                         viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                         graph = new Microsoft.Msagl.Drawing.Graph("graph");
                         graphPanel.Show();
@@ -248,6 +293,7 @@ namespace FolderCrawler
                                     {
                                         edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                                         contain = true;
+                                        refresh_graph(graph,viewer);
                                     } 
                                     else
                                     {
@@ -262,12 +308,7 @@ namespace FolderCrawler
                                     end.LabelText = parts_end[parts_end.Length - 1];
                                     start.LabelText = parts_start[parts_start.Length - 1];
 
-                                    viewer.Graph = graph;
-                                    graphPanel.SuspendLayout();
-                                    viewer.Dock = DockStyle.Fill;
-                                    graphPanel.Controls.Add(viewer);
-                                    graphPanel.ResumeLayout();
-                                    sleep(500);
+                                    refresh_graph(graph,viewer);
                                 }
                             }
                             for (int j = 0; j < daftarFolder[i].Count; j++)
@@ -305,8 +346,14 @@ namespace FolderCrawler
                                 }
                             }
                             refresh_graph(graph,viewer);
-                            }
+                        }
+                        foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
+                        {
+                            graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                            graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                        }
                          refresh_graph(graph,viewer);
+                         label3.Text = "File Not Found";
                     }
                 }
             }
