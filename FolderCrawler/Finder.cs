@@ -35,6 +35,7 @@ namespace FolderCrawler
     /// 4. graf : a list of edges, for example [A/B/C, A/B/C/D]. Sorted by time checked (1 for each step)
     /// 5. itemWaitingList : an array of array of nodes which are items, the index means which step they enter the waiting list
     /// 6. folderWaitingList : an array of array of nodes which are folders, the index means which step they enter the waiting list
+    /// 7. emptyFolders: an array of folders which are empty
     /// </summary>
     class folder
     {
@@ -47,6 +48,7 @@ namespace FolderCrawler
         private List<Edge> Graf = new List<Edge>() ; // List of edges, misalnya [[A,B],[B,C]]
         private List<List<string>> itemWaitingList = new List<List<string>>(); // 
         private List<List<string>> folderWaitingList = new List<List<string>>();
+        private List<string> emptyFolders = new List<string>();
 
         // Getter 
         public string getCurDir()
@@ -83,6 +85,12 @@ namespace FolderCrawler
         {
             return folderWaitingList;
         }
+
+        public List<string> getEmptyFolders()
+        {
+            return emptyFolders;
+        }
+        
 
         // Setter 
         public void setCurDir(string newCurDir)
@@ -147,12 +155,22 @@ namespace FolderCrawler
             }) ;
         }
 
+        public void addToEmptyFolders()
+        {
+            if (!Directory.GetDirectories(this.getCurDir()).Any() && !Directory.GetFiles(this.getCurDir()).Any())
+            {
+                emptyFolders.Add(this.getCurDir());
+            }
+        }
+
+
         // Must be used everytime we try to search again to reset everything
         public void clearEverything() {
             itemWaitingList.Clear() ;
             folderWaitingList.Clear() ;
             foundDir.Clear() ;
             Graf.Clear() ;
+            emptyFolders.Clear() ;
         }
 
         //Search for the file using the DFS algorithm.
@@ -160,6 +178,7 @@ namespace FolderCrawler
 
             // Check the current path first. Does it have the file we are searching for?
             this.checkFiles();
+            addToEmptyFolders();
 
             //In case the file is not found, iterate for every subdirectory using DFS traverse
             string[] listOfSubDir = Directory.GetDirectories(this.getCurDir());
@@ -182,6 +201,7 @@ namespace FolderCrawler
 
             //Check the start directory, does it have the file we're searching for?
             this.checkFiles();
+            addToEmptyFolders();
             
             //In case the file is not found, iterate for every subdirectory using BFS traverse
             string[] listOfSubDir = Directory.GetDirectories(this.getCurDir());
@@ -193,6 +213,7 @@ namespace FolderCrawler
                 this.setCurDir(listOfSubDir[0]);
                 addToGraf();
                 this.checkFiles();
+                addToEmptyFolders();
                 this.folderWaitingList.Add(Directory.GetDirectories(this.getCurDir()).ToList());
                 listOfSubDir = listOfSubDir.Concat(Directory.GetDirectories(this.getCurDir())).ToArray();
                 listOfSubDir = listOfSubDir.Where(path => path != listOfSubDir[0]).ToArray(); // Remove the first path on the list
