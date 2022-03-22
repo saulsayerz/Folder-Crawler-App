@@ -230,6 +230,7 @@ namespace FolderCrawler
                         {
                             bool founded = false;
                             bool founded1 = false;
+                            bool founded2 = false;
                             for(int j = 0; j < startFolder.getFoundDir().Count; j++)
                             {
                                 if(startFolder.getFoundDir()[j].Contains(edge.Target))
@@ -240,7 +241,11 @@ namespace FolderCrawler
                                 {
                                     founded1 = true;
                                 }
-                                if(founded && founded1)
+                                if(String.Equals(startFolder.getFoundDir()[j],edge.Target))
+                                {
+                                    founded2 = true;
+                                }
+                                if(founded && founded1 && founded2)
                                 {
                                     break;
                                 }
@@ -258,16 +263,19 @@ namespace FolderCrawler
                                     {
                                         graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                     }
-                                    for(int k = 0; k < daftarFile[j].Count; k++)
+                                    for(int k = 0; k < emptyFolder.Count; k++)
                                     {
-                                        if((String.Equals(daftarFile[j][k],edge.Target) || toggleButton1.Checked) && !founded)
+                                        if(String.Equals(edge.Target,emptyFolder[k]))
                                         {
                                             graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                         }
                                     }
-                                    for(int k = 0; k < emptyFolder.Count; k++)
+                                }
+                                for(int j = 0; j < daftarFile.Count; j++)
+                                {
+                                    for(int k = 0; k < daftarFile[j].Count; k++)
                                     {
-                                        if(String.Equals(edge.Target,emptyFolder[k]))
+                                        if((String.Equals(daftarFile[j][k],edge.Target) || toggleButton1.Checked) && !founded2)
                                         {
                                             graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                         }
