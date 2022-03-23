@@ -121,23 +121,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\micha\\.nuget\\packages\\": {}
+    "C:\\Users\\kylet\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
+      "projectUniqueName": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
       "projectName": "FolderCrawler",
-      "projectPath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
-      "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-      "outputPath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\FolderCrawler\\obj\\",
+      "projectPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
+      "packagesPath": "C:\\Users\\kylet\\.nuget\\packages\\",
+      "outputPath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\FolderCrawler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kylet\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net4.8"
+        "net48"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},

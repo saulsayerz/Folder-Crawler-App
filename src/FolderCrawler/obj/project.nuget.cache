@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1aYDpMFudw/Tho6SOBWFNVtsQKET4zXrPdXA3qAfgKUUJwPFwa2Ix/TQbDbJPjMBw4t/fmNXihf5loGybuWmKg==",
+  "dgSpecHash": "JkE+yRZSwspPQk5nlsmdGjh28l5mflDWVnIv6vN+cAfgK8p+MHqJVd83R1HznYjZG53csF12Y4pCdpugNtDjUA==",
   "success": true,
-  "projectFilePath": "C:\\Kuliah\\Semester 4\\Strategi Algoritma\\Tubes_2\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
+  "projectFilePath": "C:\\Sch\\Sem4\\Stima\\Tubes2_DoiFinders\\src\\FolderCrawler\\FolderCrawler.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.msagl\\1.1.3\\microsoft.msagl.1.1.3.nupkg.sha512",
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.msagl.drawing\\1.1.3\\microsoft.msagl.drawing.1.1.3.nupkg.sha512",
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.msagl.graphviewergdi\\1.1.3\\microsoft.msagl.graphviewergdi.1.1.3.nupkg.sha512"
+    "C:\\Users\\kylet\\.nuget\\packages\\microsoft.msagl\\1.1.3\\microsoft.msagl.1.1.3.nupkg.sha512",
+    "C:\\Users\\kylet\\.nuget\\packages\\microsoft.msagl.drawing\\1.1.3\\microsoft.msagl.drawing.1.1.3.nupkg.sha512",
+    "C:\\Users\\kylet\\.nuget\\packages\\microsoft.msagl.graphviewergdi\\1.1.3\\microsoft.msagl.graphviewergdi.1.1.3.nupkg.sha512"
   ],
   "logs": []
 }

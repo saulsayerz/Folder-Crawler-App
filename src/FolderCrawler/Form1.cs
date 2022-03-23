@@ -74,7 +74,8 @@ namespace FolderCrawler
                         label11.Text = "Algorithm Time: " + sw.ElapsedMilliseconds.ToString() + " ms";
                     }
                     if (startFolder.found())
-                    {   
+                    {
+                        label3.Text = "";
                         foreach (var link in startFolder.getFoundDir())
                         {
                             LinkLabel newLink = new LinkLabel();
