@@ -49,3 +49,20 @@ C:\Sch\Sem4\Stima\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCra
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.CopyComplete
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.exe
 C:\Sch\Sem4\Stima\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.pdb
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\FolderCrawler.exe.config
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\FolderCrawler.exe
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\FolderCrawler.pdb
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.dll
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.Drawing.dll
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\bin\Debug\net4.8\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.AssemblyReference.cache
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.SuggestedBindingRedirects.cache
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.Form1.resources
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.GenerateResource.cache
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.AssemblyInfoInputs.cache
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.AssemblyInfo.cs
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.CoreCompileInputs.cache
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.csproj.CopyComplete
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.exe
+C:\Kuliah\Semester 4\Strategi Algoritma\Tubes_2\Tubes2_DoiFinders\src\FolderCrawler\obj\Debug\net4.8\FolderCrawler.pdb

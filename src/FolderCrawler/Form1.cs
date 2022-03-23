@@ -99,13 +99,18 @@ namespace FolderCrawler
                         graph = new Microsoft.Msagl.Drawing.Graph("graph");
                         graphPanel.Show();
                         bool found = false;
+
+                        // Melakukan iterasi terhadap jumlah folder yang dikunjungi
                         for (int i = 0; i <= G.Count; i++)
                         {
+                            // Membuat edge terhadap daftar file yang dikunjungi pada folder tertentu
                             for(int j = 0; j < daftarFile[i].Count; j++)
                             {
                                 string[] parts = daftarFile[i][j].Split(Path.DirectorySeparatorChar);
                                 string parent = System.IO.Directory.GetParent(daftarFile[i][j]).FullName;
                                 int index;
+
+                                // Jika toggleButton1 dicentang, maka ditampilkan seluruh solusi yang ada
                                 if(toggleButton1.Checked)
                                 {
                                     index = startFolder.getFoundDir().Count;
@@ -114,8 +119,8 @@ namespace FolderCrawler
                                 {
                                     index = 1;
                                 }
-                                bool foundtemp = true;
                                 bool foundtemp1 = false;
+                                // Mengubah warna edge berwarna biru jika menemukan file solusi pada path tertentu
                                 for(int k = 0; k < index; k++)
                                 {   
                                     if (String.Equals(startFolder.getFoundDir()[k],daftarFile[i][j]))
@@ -137,13 +142,12 @@ namespace FolderCrawler
                                         continue;
                                     }
                                 }
-                                if(foundtemp1)
-                                {
 
-                                } else if (found && !toggleButton1.Checked)
+                                // Jika ditemukan solusi, tambahkan edge 
+                                if(foundtemp1) {} else if (found && !toggleButton1.Checked)
                                 {
                                     graph.AddEdge(parent, daftarFile[i][j]);
-                                } else if (toggleButton1.Checked || !found)
+                                } else if (toggleButton1.Checked || !found) // Jika tidak ditemukan, tambahkan edge berwarna merah
                                 {
                                     graph.AddEdge(parent, daftarFile[i][j]).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                                 }
@@ -158,6 +162,9 @@ namespace FolderCrawler
                                 string[] parts_start = G[i].start.Split(Path.DirectorySeparatorChar);
                                 string[] parts_end = G[i].end.Split(Path.DirectorySeparatorChar);
                                 bool contain = false;
+
+                                // Jika pada folder terdapat edge target bernilai yang sama dengan folder, ubah ke warna merah
+                                // Berguna untuk mengubah parent yang memiliki anak berupa folder dan akan atau telah ditelusuri
                                 foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
                                 {
                                     if(String.Equals(edge.Target,G[i].end))
@@ -170,6 +177,8 @@ namespace FolderCrawler
                                         continue;
                                     }
                                 }
+
+                                // Jika misalkan ternyata anak tersebut belum dimiliki, ditambahkan sebagai waiting list
                                 if(!contain)
                                 {
                                     graph.AddEdge(G[i].start, G[i].end);
@@ -180,41 +189,33 @@ namespace FolderCrawler
                                     refresh_graph(graph,viewer);
                                 }
                             }
+
+                            // Menelusuri folder-folder yang terdapat pada waiting list
                             for (int j = 0; j < daftarFolder[i].Count; j++)
                             {
                                 bool contain = false;
                                 foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
                                 {
-              
+                                    // Mengubah warna folder pada waiting list ke merah jika telah ditelusuri
                                     if(String.Equals(edge.Target,daftarFolder[i][j]))
                                     {
                                         edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                        if(j == daftarFolder[i].Count - 1)
-                                        {   bool founded = false;
-                                            if(toggleButton1.Checked)
-                                            {
-                                                for(int k = 0; k < startFolder.getFoundDir().Count; k++)
-                                                {
-                                                    if(startFolder.getFoundDir()[k].Contains(edge.Source)) {
-                                                        founded = true;
-                                                        break;
-                                                    }
-                                                }
-                                            }
-                                        }
                                         contain = true;
                                         break;
                                     } 
                                 }
+
+                                // Jika pada folder waiting list belum terdapat edge yang dimaksud, ditambahkan edge tersebut
                                 if(!contain)
                                 {
                                     string[] parts = daftarFolder[i][j].Split(Path.DirectorySeparatorChar);
                                     string parent = System.IO.Directory.GetParent(daftarFolder[i][j]).FullName;
+                                    // Jika memilih toggleButton1, langsung dipilih warna merah
                                     if(toggleButton1.Checked)
                                     {
                                         graph.AddEdge(parent, daftarFolder[i][j]).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                                     } 
-                                    else
+                                    else // Jika tidak, dibuat warna hitam
                                     {
                                         graph.AddEdge(parent, daftarFolder[i][j]);
                                     }
@@ -226,6 +227,9 @@ namespace FolderCrawler
                                 refresh_graph(graph,viewer);
                             }
                         }
+
+                        // Mengubah warna node menjadi merah jika sudah ditelusuri tetapi tidak benar, biru jika sudah ditelusuri dan benar
+                        // Serta hitam jika belum sempat ditelusuri
                         foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
                         {
                             bool founded = false;
@@ -250,48 +254,50 @@ namespace FolderCrawler
                                     break;
                                 }
                             }
-                            if(true)
+                            List<string> emptyFolder = startFolder.getEmptyFolders();
+
+                            // Mengubah warna merah node yang telah dicari dan tidak ditemukan solusinya
+                            if(!founded1 && !founded)
                             {
-                                List<string> emptyFolder = startFolder.getEmptyFolders();
-                                if(!founded1 && !founded)
+                                graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                            }
+                            for(int j = 0; j < G.Count; j++) 
+                            { 
+                                if(String.Equals(G[j].start,edge.Source) && !founded1)
                                 {
                                     graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                 }
-                                for(int j = 0; j < G.Count; j++) 
-                                { 
-                                    if(String.Equals(G[j].start,edge.Source) && !founded1)
+                                for(int k = 0; k < emptyFolder.Count; k++)
+                                {
+                                    if(String.Equals(edge.Target,emptyFolder[k]))
                                     {
-                                        graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
-                                    }
-                                    for(int k = 0; k < emptyFolder.Count; k++)
-                                    {
-                                        if(String.Equals(edge.Target,emptyFolder[k]))
-                                        {
-                                            graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
-                                        }
+                                        graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                     }
                                 }
-                                for(int j = 0; j < daftarFile.Count; j++)
+                            }
+
+                            // Mengubah warna merah pada folder yang tidak memiliki isi
+                            for(int j = 0; j < daftarFile.Count; j++)
+                            {
+                                for(int k = 0; k < daftarFile[j].Count; k++)
                                 {
-                                    for(int k = 0; k < daftarFile[j].Count; k++)
+                                    if((String.Equals(daftarFile[j][k],edge.Target) || toggleButton1.Checked) && !founded2 && !founded)
                                     {
-                                        if((String.Equals(daftarFile[j][k],edge.Target) || toggleButton1.Checked) && !founded2 && !founded)
-                                        {
-                                            graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
-                                        }
+                                        graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                                     }
                                 }
                             }
                         }
                          refresh_graph(graph,viewer);
                     }
-                    else
+                    else // Kondisi ketika tidak ditemukan
                     {
                         viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                         graph = new Microsoft.Msagl.Drawing.Graph("graph");
                         graphPanel.Show();
                         for (int i = 0; i <= G.Count; i++)
                         {
+                            // Menambahkan file-file yang telah diperiksa dan auto berwarna merah
                             for(int j = 0; j < daftarFile[i].Count; j++)
                             {
                                 string[] parts = daftarFile[i][j].Split(Path.DirectorySeparatorChar);
@@ -303,6 +309,8 @@ namespace FolderCrawler
                                 started.LabelText = parts[parts.Length - 2];
                                 refresh_graph(graph,viewer);
                             }
+
+                            // Menambahkan folder yang telah diperiksa dan auto berwarna merah
                             if(i != G.Count)
                             {
                                 string[] parts_start = G[i].start.Split(Path.DirectorySeparatorChar);
@@ -332,6 +340,8 @@ namespace FolderCrawler
                                     refresh_graph(graph,viewer);
                                 }
                             }
+
+                            // Menambahkan waiting list dan auto merah
                             for (int j = 0; j < daftarFolder[i].Count; j++)
                             {
                                 bool contain = false;
@@ -368,13 +378,15 @@ namespace FolderCrawler
                             }
                             refresh_graph(graph,viewer);
                         }
+
+                        // Mengubah warna node menjadi merah semua
                         foreach(Microsoft.Msagl.Drawing.Edge edge in graph.Edges)
                         {
                             graph.FindNode(edge.Source).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                             graph.FindNode(edge.Target).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
                         }
                          refresh_graph(graph,viewer);
-                         label3.Text = "File Not Found";
+                         
                     }
                 }
             }
