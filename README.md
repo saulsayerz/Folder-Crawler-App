@@ -27,14 +27,10 @@ Selain itu, program kami juga akan menampilkan list path dari daun-daun yang ber
 - Depth First Search (DFS) : pencarian yang berjalan dengan meluaskan subdirektori pertama dari direktori folder awal yang dipilih dan berjalan dalam dan lebih dalam lagi sampai simpul tujuan (file yang dicari) ditemukan, atau sampai menemukan simpul yang tidak punya anak (subdirektori yang tidak memiliki subdirektori lagi di dalamnya). Kemudian, pencarian backtracking, akan kembali ke simpul yang belum selesai ditelusuri.
 
 ## Requirement and Installation
-Requrement : 
-.NET Framework 4.8
-Installation :
-  1. Mengarahkan command prompt ke /src/FolderCrawler dan mengetik 
-``` dotnet add package Microsoft.Msagl --version 1.1.3 ```
-  2. Membuka folder src di Visual Studio 
-  3. Pada bagian run, pilih FolderCrawler.csproj, lalu jalankan
-  4. GUI akan muncul pada window baru dan program siap dijalankan
+Requirement : 
+- Visual Studio. You can download it <a href="https://code.visualstudio.com/download">here.</a>
+- .NET Framework. You can download it <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework">here.</a>
+- Install nugget packages such as MSAGL library. You can install them in the extension section of Visual Studio.
 
 ## Compile Program
 - Open project solution in ../src/FolderCrawler. Project will be opened in Visual Studio.
