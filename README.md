@@ -29,8 +29,16 @@ Selain itu, program kami juga akan menampilkan list path dari daun-daun yang ber
 ## Requirement and Installation
 
 ## Compile Program
+- Open project solution in ../src/FolderCrawler. Project will be opened in Visual Studio.
+- Right Click Solution 'FolderCrawler' in solution Explorer.
+- Build Solution (Alternative : Ctrl + Shift + B)
+- Create executable file by Start Without Debugging (Ctrl + F5)
 
 ## How To Use Program
+- Open project executable file in ../src/FolderCrawler/bin/Debug/net4.8.
+- Open starting folder by clicking Choose Start Folder and set destination file in File To Find: Textbox (by default: example.jpg)
+- Configure search settings (BFS/DFS mode, graph search interval, and Search All Occurence option).
+- Click Find File, resulting figure and hyperlink texts will be shown in panel below.
 
 ## Author
 >Project ini dibuat oleh kelompok 43 yang beranggotakan :
